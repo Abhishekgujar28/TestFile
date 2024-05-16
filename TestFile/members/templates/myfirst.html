@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conatiner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 26px;
+            width: 100%;
+            height: 100%;
+
+
+        }
+ 
+
+        @keyframes Rotation {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+       .class{
+        animation: Rotation linear 2s infinite;
+        /* animation: ease-in-out ; */
+    }
+        
+
+        .box {
+            width: 250px;
+            height: 250px;
+            border: 3px solid black;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 26px;           
+          
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <div class="box">BOX</div>
+        <div class="box">BOX</div>
+        <div class="box">BOX</div>
+        <div class="box">BOX</div>
+        <div class="box">BOX</div>
+    </div>
+
+    <script>
+
+
+        let boxes = document.querySelector(".conatiner").children
+        console.log(boxes)
+
+        function randomcolor() {
+            let val1 = Math.random() * 255 + 10
+            let val2 = Math.random() * 255 + 30
+            let val3 = Math.random() * 255 + 9
+
+            return `rgb(${val1}, ${val2}, ${val3})`
+
+        }
+
+
+        // let a =   Array.from(boxes).forEach(e => {
+        //       console.log(e);
+        //       e.style.backgroundColor = randomcolor()
+  
+        //   })
+        
+        setInterval(() => {
+
+
+
+            Array.from(boxes).forEach(e => {
+              console.log(e);
+               e.classList.add( "class") 
+              e.style.backgroundColor = randomcolor()
+
+  
+          })
+            
+        }, 1000);
+        // console.log(randomcolor())
+
+        // window.setTimeout(function () {
+        //     window.location.reload();
+        // }, 300);
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
